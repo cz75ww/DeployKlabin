@@ -1,0 +1,10 @@
+- name: Settings Sudoers Rules for T-SYSTEMS Users
+  lineinfile:
+    path: /etc/sudoers
+    line: "{{ item }}"
+
+  with_items:
+    - '#======================== T-SYSTEMS SUDOERS SETTINGS =========================='
+    - '%tsadm ALL=(ALL) NOPASSWD:ALL'
+    - '%sapsys ALL=(ALL) NOPASSWD:ALL'
+    

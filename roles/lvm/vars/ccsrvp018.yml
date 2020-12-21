@@ -1,0 +1,41 @@
+DISK:
+  - /dev/sdc
+  - /dev/sdd
+  - /dev/sde
+  - /dev/sdf
+  - /dev/sdg
+      
+
+PVNAME:
+  - pvname: /dev/sdc1,/dev/sdd1,/dev/sde1,/dev/sdf1,/dev/sdg1
+
+LVM_Settings:
+  - lv_name: datalv01
+    lv_size: 256G
+    fs_name: /hana/shared
+    lvpath: /dev/mapper/datavg-datalv01
+
+  - lv_name: datalv02
+    lv_size: 512G
+    fs_name: /hana/data
+    lvpath: /dev/mapper/datavg-datalv02
+
+  - lv_name: datalv03
+    lv_size: 256G
+    fs_name: /hana/log
+    lvpath: /dev/mapper/datavg-datalv03
+
+  - lv_name: datalv04
+    lv_size: 512G
+    fs_name: /hana/backup
+    lvpath: /dev/mapper/datavg-datalv04
+
+  - lv_name: datalv05
+    lv_size: 50G
+    fs_name: /usr/sap
+    lvpath: /dev/mapper/datavg-datalv05
+
+  - lv_name: datalv06
+    lv_size: 100%FREE
+    fs_name: /sapmnt
+    lvpath: /dev/mapper/datavg-datalv06

@@ -1,0 +1,3 @@
+---
+# tasks file for suse_update
+- import_tasks: update-task.yml

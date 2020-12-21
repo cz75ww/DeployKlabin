@@ -1,0 +1,17 @@
+DISK:
+  - /dev/sdb
+
+PVNAME:
+  - pvname: /dev/sdb1
+
+LVM_Settings:
+  - lv_name: datalv01
+    lv_size: 64G
+    fs_name: /usr/sap
+    lvpath: /dev/mapper/datavg-datalv01
+
+  - lv_name: datalv02
+    lv_size: 100%FREE
+    fs_name: /sapmnt
+    lvpath: /dev/mapper/datavg-datalv02
+

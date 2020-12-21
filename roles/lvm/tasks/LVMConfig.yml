@@ -1,0 +1,40 @@
+- include_vars: "{{ inventory_hostname }}.yml"
+
+#- name: Create a new primary partition
+#  parted:
+#    device: "{{ item }}"
+#    number: 1
+#    state: present
+#  tags: partition_status_tag
+#  with_items: "{{ DISK }}"
+
+- name: Create or resize a Volume Group
+  lvg:
+   vg: "{{ vgname }}"
+   pvs: "{{ item.pvname }}"
+  with_items: "{{ PVNAME }}"
+
+- name: Creating Logical Volumes
+  lvol:
+    vg: "{{ vgname }}"
+    lv: "{{ item.lv_name }}"
+    size: "{{ item.lv_size }}"
+  with_items: "{{ LVM_Settings }}"
+  ignore_errors: yes
+
+- name: Creating Filesystems
+  filesystem:
+    fstype: xfs
+    dev: "{{ item.lvpath }}"
+  with_items: "{{ LVM_Settings }}"
+  ignore_errors: yes
+
+- name: Mounting Filesystems
+  mount:
+    path: "{{ item.fs_name }}"
+    src: "{{ item.lvpath }}"
+    fstype: xfs
+    state: mounted
+  with_items: "{{ LVM_Settings }}"
+  tags: fscreate_tag
+  ignore_errors: yes

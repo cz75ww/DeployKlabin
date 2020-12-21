@@ -1,0 +1,41 @@
+[SERVERS]
+ccsrvd001 	IpAddress=10.160.152.4
+ccsrvd002 	IpAddress=10.160.152.8
+ccsrvd003 	IpAddress=10.160.152.9
+ccsrvd004 	IpAddress=10.160.152.6
+ccsrvd014 	IpAddress=10.160.152.5
+ccsrvd015 	IpAddress=10.160.152.7
+ccsrvd016 	IpAddress=10.160.152.10
+ccsrvp005 	IpAddress=10.150.88.5
+ccsrvp011 	IpAddress=10.150.72.4
+scsrvs189 	IpAddress=10.160.152.11
+
+[SAPHANA]
+ccsrvd012   	IpAddress=10.160.144.13
+ccsrvd013   	IpAddress=10.160.152.12
+ccsrvp017   	IpAddress=10.150.80.5
+ccsrvp018   	IpAddress=10.150.88.6
+
+[backupvg]
+ccsrvd001 	IpAddress=10.160.152.4
+ccsrvd002 	IpAddress=10.160.152.8
+ccsrvd003 	IpAddress=10.160.152.9
+ccsrvd004 	IpAddress=10.160.152.6
+ccsrvd014 	IpAddress=10.160.152.5
+ccsrvd015 	IpAddress=10.160.152.7
+ccsrvd016 	IpAddress=10.160.152.10
+ccsrvp005 	IpAddress=10.150.88.5
+scsrvs189 	IpAddress=10.160.152.11
+
+[Deploy]
+ccsrvp021	IpAddress=10.150.88.14
+ccsrvp022	IpAddress=10.150.88.12
+ccsrvp025	IpAddress=10.150.88.10
+ccsrvp029	IpAddress=10.150.88.7
+scsrvs019	IpAddress=10.150.88.13
+scsrvs024	IpAddress=10.150.88.11
+scsrvs032	IpAddress=10.150.88.8
+scsrvs090	IpAddress=10.150.88.9
+
+[local]
+control		ansible_connection=local

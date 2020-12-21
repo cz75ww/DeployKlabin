@@ -1,0 +1,25 @@
+DISK: 
+  - /dev/sdp
+  - /dev/sdq
+PVNAME:
+  - pvname: /dev/sdp1,/dev/sdq1
+
+LVM_Settings:
+  - lv_name: backuplv01
+    lv_size: 512G
+    fs_name: /oraclestage/archive
+    lvpath: /dev/mapper/backupvg-backuplv01
+
+  - lv_name: backuplv02
+    lv_size: 100%FREE
+    fs_name: /oraclestage/backup
+    lvpath: /dev/mapper/backupvg-backuplv02
+
+
+
+
+
+
+
+
+    

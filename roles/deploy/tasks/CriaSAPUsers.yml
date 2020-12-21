@@ -1,0 +1,14 @@
+- include_vars: "SAPUsers.yml"
+
+- name: Adding SAP Users on Linux Servers
+  user:
+    name: "{{ item.user }}"
+    comment: "{{ item.name }}"
+    state: present
+    groups: sapsys
+    password: "{{ default_password }}"
+  with_items: "{{ SettingsUsers }}"
+
+- name: force change password on First Logon
+  command: chage -d 0 "{{ item.user }}"
+  with_items: "{{ SettingsUsers }}"

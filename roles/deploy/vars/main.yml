@@ -1,0 +1,4 @@
+---
+# vars file for deploy
+  default_password: $1$mEG8Zd/y$BVnORO2W3HcdNHfp4ZU3d/
+  ansible_password: $1$XgGJiUYB$nR7cHS2D4CId29p85WN5L.

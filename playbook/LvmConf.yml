@@ -1,0 +1,6 @@
+---
+  - hosts: backupvg
+    become: true
+
+    roles:
+      - /home/fsouza3/ansible/roles/lvm

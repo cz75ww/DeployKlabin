@@ -1,0 +1,7 @@
+---
+# tasks file for deploy
+  - import_tasks: CriaGroup.yml
+  - import_tasks: CriaLinuxUsers.yml
+  - import_tasks: CriaSAPUsers.yml
+  - import_tasks: SudoersConf.yml
+  - import_tasks: CriaLinuxUsersIndia.yml

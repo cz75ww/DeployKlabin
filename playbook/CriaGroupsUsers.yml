@@ -1,0 +1,10 @@
+# Role to create Users and Groups on Linux servers
+
+---
+  - hosts: Deploy
+    become: true
+
+    roles:
+      - /home/fsouza3/ansible/roles/deploy
+
+      

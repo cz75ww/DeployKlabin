@@ -1,0 +1,7 @@
+---
+  - hosts: SAPHANA
+    become: true
+
+    roles:
+      - /home/fsouza3/ansible/roles/utilities
+      

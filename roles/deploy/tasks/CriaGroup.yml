@@ -1,0 +1,17 @@
+- name: Creating the Sys Admin group on Servers
+  group:
+    name: "{{ item.name }}"
+    state: present
+  loop:
+    - { name: 'tsadm' }
+    - { name: 'tsoper' }
+    - { name: 'settings'}
+    - { name: 'sapsys' }
+
+  register: create_grp
+  tags: create_grp_tag
+
+
+- name: Debug  Creating the Sys Admin group on Servers
+  debug:
+    msg: "{{ create_grp }}"

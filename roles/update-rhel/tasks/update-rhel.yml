@@ -1,0 +1,20 @@
+- name: Install Patches on server
+  yum:
+    name: '*'
+    state: latest
+  register: UpdateOS
+
+- name: Debuging Updating OS
+  debug:
+    msg: "{{ UpdateOS }}"
+
+- name: Reboot  process on servers
+  reboot:
+    reboot_timeout: 3600
+  register: reboot_server
+  tags: reboot_command
+  when: reboot_process == 'yes'
+
+- name: Debug reboot process on servers
+  debug:
+    msg: "{{ reboot_server }}"
